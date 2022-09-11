@@ -1,0 +1,22 @@
+{% extends 'users\base.html' %}
+{% block body %}
+{% load bootstrap5 %}
+<div class="card mx-auto px-4 pb-4 pt-2 mt-3" style="width: 25rem;">
+<div class="header-wrapper">
+    <div class="header">
+        <div class="title-container">
+            <div class="col-md-12 text-center">
+                <h1>Sign up</h1>
+            </div>
+               <form method="POST">
+               {% csrf_token %}
+                {% bootstrap_form form %}
+                <div class="col-md-12 text-center">
+                   <button type="submit" class="btn btn-primary mx-auto">Register</button>
+                </div>
+               </form>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
