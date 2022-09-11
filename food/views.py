@@ -1,5 +1,4 @@
 from curses.ascii import HT
-from re import template
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
