@@ -1,0 +1,24 @@
+{% extends 'contact\base.html' %}
+{% block body %}
+{% load bootstrap5 %}
+<div class="row mx-2 height:100%">
+    <div class="col-md-6">
+<img class="card-img-left" src="https://media.istockphoto.com/photos/small-business-owner-at-entrance-looking-at-camera-picture-id1180926063?k=20&m=1180926063&s=612x612&w=0&h=0h0xX4cxa-XzMhRomJ91ksWJP1GztdzSdVF7shtg00w=" alt="Waiter waiting for orders" width="65%">
+    </div>
+<div class="card px-4 pb-2 pt-2 mt-3 mb-3" style="width: 35%; height: 25%;">
+    <div class="header-wrapper">
+        <div class="header">
+            <div class="title-container">
+                <div class="col-md-12 text-center">
+                    <h1>Contact us</h1>
+                </div>
+            </div>
+<form method="post">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+ </form>
+ <div class="col-md-12 text-center">
+    <input type="submit" value="Submit">
+</div>
+</div>
+ {% endblock %}
