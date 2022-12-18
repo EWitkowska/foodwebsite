@@ -135,3 +135,8 @@ GitHub.sublime-settings
 !.vscode/launch.json 
 !.vscode/extensions.json 
 .history
+users/migrations/0002_remove_profile_image.py
+pictures/contact-bg.jpeg
+pictures/register-bg.jpeg
+db.sqlite3
+.gitignore
