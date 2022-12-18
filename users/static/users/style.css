@@ -1,0 +1,116 @@
+/* Register section */
+
+.vertical-center {
+    min-height: 100%; 
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+.container-fluid {
+    display: flex;
+    align-self: center;
+}
+
+.left-container {
+    height: 100%; 
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255,219,0);
+}
+
+@media screen and (max-width: 768px) {
+    .container-fluid {
+        display: inline-flex;
+        flex-wrap: wrap;
+        max-width: fit-content;
+    }
+    #login-container {
+        display: inline-flex;
+        flex-wrap: wrap;
+        max-width: fit-content;
+    }
+}
+
+#card-right{
+    background-color: rgb(32, 32, 32);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+input[type="text"], textarea {
+    background-color : rgb(32, 32, 32); 
+    border: rgb(255,219,0) solid 2px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+}
+
+input[type="text"]:focus, textarea:focus {
+    background-color : rgb(32, 32, 32); 
+    box-shadow: none;
+    border: rgb(255,219,0) solid 2px; 
+}
+
+
+input[type="email"], textarea {
+    background-color : rgb(32, 32, 32);  
+    border: rgb(255,219,0) solid 2px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+}
+
+input[type="email"]:focus, textarea:focus {
+    background-color : rgb(32, 32, 32); 
+    box-shadow: none;
+    border: rgb(255,219,0) solid 2px;
+}
+
+input[type="password"], textarea {
+    background-color : rgb(32, 32, 32); 
+    border: rgb(255,219,0) solid 2px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+}
+
+input[type="password"]:focus, textarea:focus {
+    background-color : rgb(32, 32, 32); 
+    box-shadow: none;
+    border: rgb(255,219,0) solid 2px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.btn {
+    font-size: large !important;
+    background-color: rgb(255,219,0) !important;
+}
+
+/* Login section */
+
+#login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+
+#login-card {
+    background-color: rgb(32, 32, 32);
+}
+
+#login-h1 {
+    color : rgb(255,219,0);  
+}

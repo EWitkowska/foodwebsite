@@ -16,3 +16,39 @@ div.col-md-3 h2{
     z-index:9999; 
     border-radius:0px
 }
+
+.bg-image {
+    background-size: cover;
+    height: 100vh;
+    min-height: 60vh; 
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .bg-image {
+        min-height: 30vh;
+    }
+}
+
+#contact {
+    font-family: Parisienne, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 600;
+}
+
+#register-card {
+    background-color: rgb(255,219,0);
+    color: black;
+}
+
+/* #register-sign-up {
+    font-family: Parisienne, 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+} */
+
+#register-title {
+    font-size: 1.3em;
+}
+
+.form-control:active {
+    border: 0;
+    box-shadow: none;
+}

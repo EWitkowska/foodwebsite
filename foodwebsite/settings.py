@@ -121,7 +121,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = '/static/food/'
+STATIC_URL = '/static/users/'
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'food:index'
 MEDIA_ROOT = os.path.join(BASE_DIR,'pictures')

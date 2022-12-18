@@ -1,22 +1,32 @@
 {% extends 'users\base.html' %}
 {% block body %}
-{% load bootstrap5 %}
-<div class="card mx-auto px-4 pb-4 pt-2 mt-3" style="width: 25rem;">
-<div class="header-wrapper">
-    <div class="header">
-        <div class="title-container">
-            <div class="col-md-12 text-center">
-                <h1>Sign up</h1>
+<div class="container-fluid mx-auto vertical-center" style="width: 80rem;">
+    <div class="left-container" style="width: 40rem; height: 45rem;">
+            <h1 class="text-center">CREATE ACCOUNT NOW</h1>
+    </div>
+    <div class="right-container" style="width: 40rem; height: 45rem;">
+        <div id="card-right" class="card mx-auto rounded-0" style="width: 40rem; height: 45rem">
+            <div class="card-body">
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group mt-5 pt-3">
+                      <input type="text" class="form-control text-white" id="{{ form.username.id_for_label }}"name="username" aria-describedby="nameHelp" placeholder="Your Name" autocomplete="off">
+                    </div>
+                    <div class="form-group mt-5 mx-auto">
+                      <input type="email" class="form-control text-white" id="{{ form.email.id_for_label }}" name="email" aria-describedby="emailHelp" placeholder="Enter Email" autocomplete="off">
+                    </div>
+                    <div class="form-group mt-5 mx-auto">
+                      <input type="password" class="form-control text-white" id="{{ form.password.id_for_label }}" name="password1" placeholder="Password" autocomplete="off">
+                    </div>
+                    <div class="form-group mt-5 mx-auto">
+                      <input type="password" class="form-control text-white" id="{{ form.password2.id_for_label }}" name="password2" placeholder="Confirm Password" autocomplete="off">
+                      </div>
+                      <div class="container">
+                    <button type="submit" class="btn text-black rounded-0 bg mt-5">Sign Up</button>
+                    </div>
+                  </form>
             </div>
-               <form method="POST">
-               {% csrf_token %}
-                {% bootstrap_form form %}
-                <div class="col-md-12 text-center">
-                   <button type="submit" class="btn btn-primary mx-auto">Register</button>
-                </div>
-               </form>
         </div>
     </div>
-</div>
 </div>
 {% endblock %}
