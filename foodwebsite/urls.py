@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include,path
 from users import views as user_views
+from menu import views as menu_views
 from contact import views as contact_views
 from django.contrib.auth import views as auth_views
 from django.conf import settings
@@ -26,12 +27,10 @@ urlpatterns = [
     path('',include('food.urls')),
     path('admin/', admin.site.urls),
     path('register/',user_views.register,name='register'),
-    path('success/',user_views.register,name='register'),
-    # path('login/',auth_views.LoginView.as_view(template_name='users/login.html'),name='login'),
     path('login/',auth_views.LoginView.as_view(template_name='users/login.html',authentication_form=LoginForm),name='login'),
-    path('logout/',auth_views.LogoutView.as_view(template_name='users/logout.html'),name='logout'),
-    # path('profile/',user_views.profile_page,name='profile'),
+    path('logout/', auth_views.LogoutView.as_view(next_page=settings.LOGOUT_REDIRECT_URL), name='logout'),
     path('contact/',contact_views.contact_view,name='contact'),
+    path('menu/',menu_views.menu,name='menu'),
 ]
 
 urlpatterns += [

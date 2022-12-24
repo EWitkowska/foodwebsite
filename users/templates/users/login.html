@@ -7,10 +7,16 @@
             <form method="POST">
                 {% csrf_token %}
                 <div class="form-group mt-2 p-3">
-                  <input type="text" class="form-control text-white" id="{{ form.username.id_for_label }}" name="username" aria-describedby="nameHelp" placeholder="Username" autocomplete="off">
+                  <input type="text" class="form-control text-white" name="username" id="{{ form.username.id_for_label }}" autocomplete="off" placeholder="" required />
+                  <label for="text" class="label-name">
+                    <span class="content-name">Username</span>
+                  </label>
                 </div>
                 <div class="form-group mt-2 p-3">
-                  <input type="password" class="form-control text-white" id="{{ form.password.id_for_label }}" name="password" placeholder="Password" autocomplete="off">
+                  <input type="password" class="form-control text-white" name="password" id="{{ form.password.id_for_label }}" autocomplete="off" placeholder="" required />
+                  <label for="password" class="label-name">
+                    <span class="content-name">Password</span>
+                  </label>
                 </div> 
                 <div class="col text-center">
                 <button type="submit" class="btn text-black rounded-0 mt-5 mx-auto">Sign In</button>

@@ -2,7 +2,7 @@
 {% block body %}
 <div class="container-fluid mx-auto vertical-center" style="width: 80rem;">
     <div class="left-container" style="width: 40rem; height: 45rem;">
-            <h1 class="text-center">CREATE ACCOUNT NOW</h1>
+            <h1 class="text-center" id="register-text">CREATE ACCOUNT NOW</h1>
     </div>
     <div class="right-container" style="width: 40rem; height: 45rem;">
         <div id="card-right" class="card mx-auto rounded-0" style="width: 40rem; height: 45rem">
@@ -10,16 +10,28 @@
                 <form method="POST">
                     {% csrf_token %}
                     <div class="form-group mt-5 pt-3">
-                      <input type="text" class="form-control text-white" id="{{ form.username.id_for_label }}"name="username" aria-describedby="nameHelp" placeholder="Your Name" autocomplete="off">
+                      <input type="text" class="form-control text-white" name="username" id="{{ form.username.id_for_label }}" autocomplete="off" placeholder="" required />
+                      <label for="text" class="label-name">
+                        <span class="content-name">Username</span>
+                      </label>
                     </div>
                     <div class="form-group mt-5 mx-auto">
-                      <input type="email" class="form-control text-white" id="{{ form.email.id_for_label }}" name="email" aria-describedby="emailHelp" placeholder="Enter Email" autocomplete="off">
+                      <input type="email" class="form-control text-white" name="email" id="{{ form.email.id_for_label }}" autocomplete="off" placeholder="" required />
+                      <label for="email" class="label-name">
+                        <span class="content-name">Email</span>
+                      </label>
                     </div>
                     <div class="form-group mt-5 mx-auto">
-                      <input type="password" class="form-control text-white" id="{{ form.password.id_for_label }}" name="password1" placeholder="Password" autocomplete="off">
+                      <input type="password" class="form-control text-white" name="password1" id="{{ form.password.id_for_label }}" autocomplete="off" placeholder="" required />
+                      <label for="password1" class="label-name">
+                        <span class="content-name">Password</span>
+                      </label>
                     </div>
                     <div class="form-group mt-5 mx-auto">
-                      <input type="password" class="form-control text-white" id="{{ form.password2.id_for_label }}" name="password2" placeholder="Confirm Password" autocomplete="off">
+                      <input type="password" class="form-control text-white" name="password2" id="{{ form.password2.id_for_label }}" autocomplete="off" placeholder="" required />
+                      <label for="password2" class="label-name">
+                        <span class="content-name">Password</span>
+                      </label>
                       </div>
                       <div class="container">
                     <button type="submit" class="btn text-black rounded-0 bg mt-5">Sign Up</button>

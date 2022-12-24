@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'food',
     'users',
     'contact',
+    'menu',
 ]
 
 MIDDLEWARE = [
@@ -124,6 +125,7 @@ USE_TZ = True
 STATIC_URL = '/static/users/'
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'food:index'
+LOGOUT_REDIRECT_URL = 'food:index'
 MEDIA_ROOT = os.path.join(BASE_DIR,'pictures')
 MEDIA_URL = '/pictures/'
 
