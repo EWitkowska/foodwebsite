@@ -1,4 +1,4 @@
-from django.urls import include,path
+from django.urls import path
 from ..foodwebsite import settings
 from users import views as user_views
 from django.contrib.auth import views as auth_views

@@ -1,38 +1,41 @@
-{% extends 'food/base.html' %}
+{% extends 'contact/base.html' %}
 {% block body %}
-{% load bootstrap5 %}
-{% comment %} <div class="row mx-2 height:100%">
-    <div class="col-md-6">
-<img class="card-img-left" src="https://media.istockphoto.com/photos/small-business-owner-at-entrance-looking-at-camera-picture-id1180926063?k=20&m=1180926063&s=612x612&w=0&h=0h0xX4cxa-XzMhRomJ91ksWJP1GztdzSdVF7shtg00w=" alt="Waiter waiting for orders" width="65%">
-    </div>
-<div class="card px-4 pb-2 pt-2 mt-3 mb-3" style="width: 35%; height: 25%;">
-    <div class="header-wrapper">
-        <div class="header">
-            <div class="title-container">
-                <div class="col-md-12 text-center">
-                    <h1>Contact us</h1>
-                </div>
+<div class="container-fluid mx-auto vertical-center" style="width: 80rem;">
+        <div id="contact-card" class="card mx-auto rounded-0" style="width: 40rem; height: 45rem">
+            <div class="card-body">
+                <h1 class="text-center mt-4 mb-4" id="contact-h1">Contact Us</h1>
+                <p class="text-center text-white">If you have a question for us, please leave a message.</p>
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="form-group mt-5 pt-3">
+                      <input type="text" class="form-control text-white" name="full_name" id="{{ form.full_name.id_for_label }}" autocomplete="off" placeholder="" required />
+                      <label for="text" class="label-name">
+                        <span class="content-name">Full Name</span>
+                      </label>
+                    </div>
+                    <div class="form-group mt-5 mx-auto">
+                      <input type="email" class="form-control text-white" name="email" id="{{ form.email.id_for_label }}" autocomplete="off" placeholder="" required />
+                      <label for="email" class="label-name">
+                        <span class="content-name">Email</span>
+                      </label>
+                    </div>
+                    <div class="form-group mt-5 mx-auto">
+                      <input type="text" class="form-control text-white" name="subject" id="{{ form.subject.id_for_label }}" autocomplete="off" placeholder="" required />
+                      <label for="text" class="label-name">
+                        <span class="content-name">Subject</span>
+                      </label>
+                    </div>
+                    <div class="form-group mt-5 mx-auto">
+                      <textarea class="form-control text-white" name="message" id="{{ form.message.id_for_label }}" type="text" rows="4" autocomplete="off" placeholder="" required></textarea>
+                      <label for="text" class="label-name" id="textarea-label">
+                        <span class="content-name" id="textarea-span">Message</span>
+                      </label>
+                      </div>
+                      <div class="container">
+                    <button type="submit" class="btn text-black rounded-0 bg mt-5">Submit</button>
+                    </div>
+                  </form>
             </div>
-<form method="POST">
-    {% csrf_token %}
-    {% bootstrap_form form %}
- </form>
- <div class="col-md-12 text-center">
-    <input type="submit" value="Submit">
-</div>
-</div> {% endcomment %}
-<div class="bg-image" style="background-image: url('https://lh3.googleusercontent.com/cWkVA6JjrQSyfi0b07SQFuW5N1myy8IesmMP7PdUSnMbULekJBsJQu6i0eAEBQ7-eZfIhNcO_0pM-3WR2hgw8SJ5-j2N201yYcKhVY20HRDCM9___8I2AVOJ4BM9IkpR8--kSBSkhpVAycrMA9W-STHMB9EBhCuAdRj3HjpU4VGYVzBRd8HIM8eilsoprYR1gYmIQdXDYEU7D1N9xzzCuWfKgGQpMVmG_klpMjMN6bYFdfDkLwlPK2BoSAsiqF82ByEdBvCy2JxPC9K8gEUlWpuOKbDzioXElMtil573dSfZN12t84EtFisaIYRlUaOmZ4xbLPkliIWUOVWUSm-7ikccDCyO90D9_Zmh_AIQ3wOf_1tD-szSO77olJ5j3J2xVPymfQFIiZ7oBGH12U2w6zHfZrFtxdvRwkd_e5O4rmq6faq61pcq465--Sv9BYH0UtL_XGit_rkXPsrR8NOXJ8cb--vCfqYrh8aC45kTS1f_W2gI7XCC844fxcAiU8HLePLsuQsHBNNXgaIUEHeRN-S-QsSio6TQN9k-M7-GulSrKg7IqGcbHBickRgS-RKb80zjGSZ6_qlcUWEc-_eCm3Zcl1e7ayUxVYzIm-u-zEcFsbfRqr6QYKg14F0jSdLg7sPxgimAghL_CoQQsCE3FUQpDcZV2A576QuUTJ6L9eXwczux_AONQBVFsBQuNxZh3vStyGoYOIAMsOFKM6LQuXT9iwh3i22utfKLnC9ZVZjgy1W-d-wYO9y5DTayQh7ZXmGPtnBucxeBP9UgJN78RvlaA8C06jRRE3G8YQ2BS-o_G5ZmXdvXNGDrr5IcAAlWKBG5mQj6BmSoij2EFDbB1T87BZI8ajbj1ZlZjFpH7enhwP_ZdsauHPy-_r1mUZEwDUV0BrqS0LuXlxc_yGZpNrGS_cGadgScenjxjhwoR0IJf8I=w3840-h1537-no?authuser=0');">
-<div class="container-md">
-    <div class="row">
-        <div class="col-md-2 mx-auto">
-          <h1 id="contact" class="text-white shadow-lg pt-5 mt-5 rounded">Contact Us</h1>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-2 mx-auto">
-          <p1 id="contact-text" class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante</p1>
-        </div>
-    </div>    
-    </div>
-</div>
- {% endblock %}
+{% endblock %}

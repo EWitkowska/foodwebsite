@@ -1,32 +1,40 @@
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
 from .models import Item
 from django.template import loader
 from .forms import ItemForm
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView
+from django.contrib.auth.decorators import login_required, permission_required
 
 # Create your views here.
 
 class IndexClassView(ListView):
-    model = Item;
+    model = Item
     template_name = 'food/index.html'
     context_object_name = 'item_list'
 
 class FoodDetail(DetailView):
-    model = Item;
+    model = Item
     template_name = 'food/details.html'
-
+ 
 class CreateItem(CreateView):
-    model = Item;
+    model = Item
     fields = ['item_name', 'item_desc', 'item_price', 'item_image']
     template_name = 'food/item-form.html'
 
     def form_valid(self,form):
         form.instance.user_name = self.request.user
         return super().form_valid(form)
+
+    def dispatch(self, request):
+        in_group =  self.request.user.groups.filter(name='Staff').exists()
+        return in_group
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['in_group'] =  self.request.user.groups.filter(name='Staff').exists()
+        return context
 
 def update_item(request,id):
     item = Item.objects.get(id=id)
